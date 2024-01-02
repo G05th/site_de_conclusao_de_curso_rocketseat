@@ -1,209 +1,210 @@
-        * {
-            margin: 0;
-            /*retiraando as margens do navegador pois não é importante nem interessa*/
-            padding: 0;
-            /*retira o espaçamento interno em todos os elementos*/
-            box-sizing: border-box;
-            /*faz com que o tamanho da caixa seja medido através da borda ou seja mede o tamanho da caixa*/
-        }
-        
-         :root {
-            --text-color: white;
-            --bg-url: url(./assets/bg-mobile.jpg);
-            --stroke-color: rgba(255, 255, 255, 0.5);
-            --surface-color: rgba(255, 255, 255, 0.1);
-            --surface-color-hover: rgba(255, 255, 255, 0.5);
-            --social-links-hover-color: rgba(255, 255, 255, 0.2);
-            --switch-bg-url: url(./assets/moon-stars.svg);
-        }
-        
-        .light {
-            --text-color: black;
-            --bg-url: url(./assets/bg-mobile-light.jpg);
-            --stroke-color: rgba(0, 0, 0, 0.5);
-            --surface-color-hover: rgba(0, 0, 0, 0.5);
-            --social-links-hover-color: rgba(0, 0, 0, 0.2);
-            --switch-bg-url: url(./assets/sun.svg);
-        }
-        
-        body * {
-            font-family: "Inter", sans-serif;
-            /*definição de fontes retiradas no google fontes, a fonte vale para toda a pagina*/
-            color: var(--text-color);
-            /*definição da cor da fonte*/
-        }
-        
-        body {
-            background: var(--bg-url) no-repeat top center/cover;
-            /*background-image:
+* {
+  margin: 0;
+  /*retiraando as margens do navegador pois não é importante nem interessa*/
+  padding: 0;
+  /*retira o espaçamento interno em todos os elementos*/
+  box-sizing: border-box;
+  /*faz com que o tamanho da caixa seja medido através da borda ou seja mede o tamanho da caixa*/
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.5);
+  --social-links-hover-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color-hover: rgba(0, 0, 0, 0.5);
+  --social-links-hover-color: rgba(0, 0, 0, 0.2);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  /*definição de fontes retiradas no google fontes, a fonte vale para toda a pagina*/
+  color: var(--text-color);
+  /*definição da cor da fonte*/
+}
+
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+  /*background-image:
     background-repeat
     background-position
     background-size*/
-        }
-        
-        #contanier {
-            /*border: 1px solid red;*/
-            /*desenha uma borda, posteriormente será retirada por questões de estetica*/
-            width: 360px;
-            /*define o tamanho*/
-            /*height: 712px;*/
-            /*define a altura, pode ser retirada pois ao longo da colocaão de elementos ela vai ser alterada*/
-            margin: 56px auto 0px;
-            /*centraliza por estar no automatico, margin: auto aplica todas as propriedades de uma só vez que seriam
+}
+
+#contanier {
+  /*border: 1px solid red;*/
+  /*desenha uma borda, posteriormente será retirada por questões de estetica*/
+  width: 100%;
+  /*define o tamanho*/
+  /*height: 712px;*/
+  max-width: 588px;
+  /*define a altura, pode ser retirada pois ao longo da colocaão de elementos ela vai ser alterada*/
+  margin: 56px auto 0px;
+  /*centraliza por estar no automatico, margin: auto aplica todas as propriedades de uma só vez que seriam
     margin-top (margem no topo)
     margin-bottom (margem a baixo)
     margin-left(margem a esquerda)
     margin-right(margem a direita)
     todos eles funcionam no sentido horario.*/
-            padding: 0px 24px;
-            /*padding-top adiciona um espaçamento interno na parte superior interna da nossa caisa/borda, podemos usar o margin-top o efeito será o mesmo*/
-        }
-        
-        #profile {
-            text-align: center;
-            /*centraliza todo o conteúdo dentro de profile*/
-            padding: 24px;
-            /*preenche os espaços internos com 24px de espaçamento interno*/
-        }
-        
-        #profile img {
-            display: block;
-            /*O disply é uma regra de visualização, o display block da toda a largura ao elemento e força qualquer elemento a ir para baixo*/
-            /*disply inline matem os elementos em linha*/
-            width: 112px;
-            /*definindo o tamanho da imagem que é definida no leyout*/
-            /*a altura já é predefinida*/
-            margin: auto;
-            /*não se aplica a elementos inline*/
-            border-radius: 50%;
-        }
-        
-        #profile p {
-            font-weight: 500;
-            /*peso da fonte*/
-            font-weight: 16px;
-            /*por padão os navegadores já definem o tamanho da fonte com 16px/ pode ser excluido*/
-            line-height: 24px;
-            /*altura da linha*/
-            padding: 8px;
-        }
-        
-        #switch {
-            position: relative;
-            width: 64px;
-            margin: 4px auto;
-        }
-        
-        #switch button {
-            width: 32px;
-            height: 32px;
-            border: 0;
-            border-radius: 50%;
-            background: white var(--switch-bg-url) no-repeat center;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            z-index: 1;
-            transform: translateY(-50%);
-            /*a propriedade tranform possui varios metodos dentre eles o translate que é responsável por organizar o elemento no eixo x ou y*/
-        }
-        
-        .light #switch button {
-            right: 0;
-            left: initial;
-        }
-        
-        #switch span {
-            /*o span é inline*/
-            display: block;
-            width: 64px;
-            height: 24px;
-            background: var(--surface-color);
-            border: 1px solid var(--stroke-color);
-            border-radius: 9999px;
-            -webkit-backdrop-filter: blur(4px);
-        }
-        /*lista*/
-        
-        ul {
-            list-style: none;
-            /*retira todos os estilos da lista*/
-            display: flex;
-            /*descrião abaixo*/
-            flex-direction: column;
-            gap: 16px;
-            padding: 24px 0;
-        }
-        
-        ul li a {
-            /*border: 1px solid red;*/
-            /*'li' tem um disply block, 'a' tem display inline ou seja a caixa fica delimitada ao elemento*/
-            display: flex;
-            /*trabalha com os elementos dentro da caixa e forma colunas com esses elementos fazendo.os ser mais flexiveis*/
-            /*flex-direction: column;*/
-            /*A melhor opção nesse momento é colocar ele na tag pai*/
-            /*por padrão o flex directioné row, então para este */
-            /*gap: 8px;*/
-            /*gap coloca espaço entre os elementos*/
-            justify-content: center;
-            /*alinha o conteúdo no centro do eixo Y ou pode se usar o text-aligne*/
-            align-items: center;
-            /*alinhamento dos itens ao centro do eico X em cada caixa*/
-            padding: 16px 24px;
-            /*espaçamento interno*/
-            background: var(--surface-color);
-            /*fundo dos botões*/
-            border: 1px solid var(--stroke-color);
-            border-radius: 8px;
-            /*border-radius -- arredondamento de borda*/
-            backdrop-filter: blur(4px);
-            /*adiciona um embaçamento na caixa*/
-            -webkit-backdrop-filter: blur(4px);
-            /*-webkit- é uma extensão de para reconhecimento em outros navegadores*/
-            text-decoration: none;
-            /*retira a linha do texto*/
-            font-weight: 500;
-            transition: background 0.2s;
-            /*tempo de transição após passar o mouse, os argumentos são: a definição de onde será aplicado e tempo de transição, para a transição de todos os elementos usa-se o atributo all*/
-        }
-        /*sudo selector*/
-        
-        ul li a:hover {
-            /*efeitos depois de passar o mouse*/
-            background: var(--surface-color-hover);
-            /*fundo dos botões*/
-            border: 1px solid var(--text-color);
-        }
-        
-        #social-links {
-            display: flex;
-            /*habilitamos o display flex para usar o gap responsavel pelo espaçamento entre os elementos*/
-            /*gap: 16px; Foi retirado porque estava a somar o espaçamento com o padding do social links a*/
-            /*responsavel pelo espaçamento entre os elementos*/
-            justify-content: center;
-            /*habilitado pelo display flex justifica o elemento ao centro*/
-            padding: 24px 0px;
-            /*espaçamento interno entre os elementos*/
-            font-size: 24px;
-            /*muda o tamanho dos elementos*/
-        }
-        
-        #social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-            border-radius: 50%;
-            /*boder-radius: 50% define uma circunferencia de borda*/
-        }
-        
-        #social-links a:hover {
-            background: var(--social-links-hover-color);
-            transition: background 0.2s;
-            /*boder-radius: 50% define uma circunferencia de borda*/
-        }
-        
-        footer {
-            padding: 24px 0;
-            text-align: center;
-        }
+  padding: 0px 24px;
+  /*padding-top adiciona um espaçamento interno na parte superior interna da nossa caisa/borda, podemos usar o margin-top o efeito será o mesmo*/
+}
+
+#profile {
+  text-align: center;
+  /*centraliza todo o conteúdo dentro de profile*/
+  padding: 24px;
+  /*preenche os espaços internos com 24px de espaçamento interno*/
+}
+
+#profile img {
+  display: block;
+  /*O disply é uma regra de visualização, o display block da toda a largura ao elemento e força qualquer elemento a ir para baixo*/
+  /*disply inline matem os elementos em linha*/
+  width: 112px;
+  /*definindo o tamanho da imagem que é definida no leyout*/
+  /*a altura já é predefinida*/
+  margin: auto;
+  /*não se aplica a elementos inline*/
+  border-radius: 50%;
+}
+
+#profile p {
+  font-weight: 500;
+  /*peso da fonte*/
+  font-weight: 16px;
+  /*por padão os navegadores já definem o tamanho da fonte com 16px/ pode ser excluido*/
+  line-height: 24px;
+  /*altura da linha*/
+  padding: 8px;
+}
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: white var(--switch-bg-url) no-repeat center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  /*a propriedade tranform possui varios metodos dentre eles o translate que é responsável por organizar o elemento no eixo x ou y*/
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  /*o span é inline*/
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 9999px;
+  -webkit-backdrop-filter: blur(4px);
+}
+/*lista*/
+
+ul {
+  list-style: none;
+  /*retira todos os estilos da lista*/
+  display: flex;
+  /*descrião abaixo*/
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  /*border: 1px solid red;*/
+  /*'li' tem um disply block, 'a' tem display inline ou seja a caixa fica delimitada ao elemento*/
+  display: flex;
+  /*trabalha com os elementos dentro da caixa e forma colunas com esses elementos fazendo.os ser mais flexiveis*/
+  /*flex-direction: column;*/
+  /*A melhor opção nesse momento é colocar ele na tag pai*/
+  /*por padrão o flex directioné row, então para este */
+  /*gap: 8px;*/
+  /*gap coloca espaço entre os elementos*/
+  justify-content: center;
+  /*alinha o conteúdo no centro do eixo Y ou pode se usar o text-aligne*/
+  align-items: center;
+  /*alinhamento dos itens ao centro do eico X em cada caixa*/
+  padding: 16px 24px;
+  /*espaçamento interno*/
+  background: var(--surface-color);
+  /*fundo dos botões*/
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  /*border-radius -- arredondamento de borda*/
+  backdrop-filter: blur(4px);
+  /*adiciona um embaçamento na caixa*/
+  -webkit-backdrop-filter: blur(4px);
+  /*-webkit- é uma extensão de para reconhecimento em outros navegadores*/
+  text-decoration: none;
+  /*retira a linha do texto*/
+  font-weight: 500;
+  transition: background 0.2s;
+  /*tempo de transição após passar o mouse, os argumentos são: a definição de onde será aplicado e tempo de transição, para a transição de todos os elementos usa-se o atributo all*/
+}
+/*sudo selector*/
+
+ul li a:hover {
+  /*efeitos depois de passar o mouse*/
+  background: var(--surface-color-hover);
+  /*fundo dos botões*/
+  border: 1px solid var(--text-color);
+}
+
+#social-links {
+  display: flex;
+  /*habilitamos o display flex para usar o gap responsavel pelo espaçamento entre os elementos*/
+  /*gap: 16px; Foi retirado porque estava a somar o espaçamento com o padding do social links a*/
+  /*responsavel pelo espaçamento entre os elementos*/
+  justify-content: center;
+  /*habilitado pelo display flex justifica o elemento ao centro*/
+  padding: 24px 0px;
+  /*espaçamento interno entre os elementos*/
+  font-size: 24px;
+  /*muda o tamanho dos elementos*/
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 50%;
+  /*boder-radius: 50% define uma circunferencia de borda*/
+}
+
+#social-links a:hover {
+  background: var(--social-links-hover-color);
+  transition: background 0.2s;
+  /*boder-radius: 50% define uma circunferencia de borda*/
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+}
