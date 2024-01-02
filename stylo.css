@@ -107,12 +107,12 @@ body {
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
+    animation: slide2 0.4s;
     /*a propriedade tranform possui varios metodos dentre eles o translate que é responsável por organizar o elemento no eixo x ou y*/
 }
 
 .light #switch button {
-    right: 0;
-    left: initial;
+    animation: slide 0.4s forwards;
 }
 
 #switch span {
@@ -124,6 +124,10 @@ body {
     border: 1px solid var(--stroke-color);
     border-radius: 9999px;
     -webkit-backdrop-filter: blur(4px);
+}
+
+#switch button:hover {
+    outline: 8px solid var(--social-links-hover-color);
 }
 
 
@@ -214,11 +218,29 @@ footer {
     text-align: center;
 }
 
-@media {
+@media (min-width) {
      :root {
-        --bg-url: url(./assets/bg-desktop.jpg)
+        --bg-url: url(./assets/bg-desktop.jpg);
     }
     .light {
-        --bg-url: url(./assets/bg.desktop-light.jpg)
+        --bg-url: url(./assets/bg.desktop-light.jpg);
+    }
+}
+
+@keyframes slide {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide2 {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
     }
 }
